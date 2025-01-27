@@ -3,6 +3,8 @@ import '@/styles/globals.css';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import { MainLayout } from '@/layouts/main-layout';
+
 const inter = Inter({
   variable: '--font-primary',
   subsets: ['latin'],
@@ -20,7 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-primary`}>{children}</body>
+      <body
+        className={`${inter.variable} bg-white font-primary text-black dark:bg-dark-gray dark:text-white`}
+      >
+        <MainLayout>{children}</MainLayout>
+      </body>
     </html>
   );
 }
