@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { SUBHEALINES } from '@/const/main';
 
+import PromptIdeas from './components/prompt-idea';
 import PromptTextarea from './components/prompt-textarea';
 
 const AiPrompt = () => {
@@ -23,6 +24,7 @@ const AiPrompt = () => {
         <p className="text-sm">{subheadline}</p>
       </div>
       <PromptTextarea />
+      <PromptIdeas />
     </div>
   );
 };
