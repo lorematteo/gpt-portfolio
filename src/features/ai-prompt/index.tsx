@@ -1,8 +1,13 @@
 import Image from 'next/image';
 
+import { SUBHEALINES } from '@/const/main';
+
 import PromptTextarea from './components/prompt-textarea';
 
 const AiPrompt = () => {
+  const randomIndex = Math.floor(Math.random() * SUBHEALINES.length);
+  const subheadline = SUBHEALINES[randomIndex];
+
   return (
     <div className="flex w-[42rem] flex-col items-center justify-center p-4">
       <div className="mb-6 flex flex-col items-center px-4 text-center">
@@ -15,7 +20,7 @@ const AiPrompt = () => {
           className="relative -bottom-4"
         />
         <h1 className="text-2xl font-medium">Hi, I&apos;m MatteoGPT.</h1>
-        <p className="text-xs">Feel free to ask me anything if you want to know more about me !</p>
+        <p className="text-sm">{subheadline}</p>
       </div>
       <PromptTextarea />
     </div>
