@@ -54,7 +54,7 @@ const TextArea: React.FC<TextAreaProps> = ({ sendMessage }) => {
           icon={
             <ArrowUpIcon className="size-4 shrink-0 text-white disabled:text-gray-100 disabled:dark:text-medium-gray" />
           }
-          className="bg-blue-500 disabled:bg-light-gray disabled:opacity-75 disabled:dark:bg-neutral-gray"
+          className="bg-blue-500 hover:bg-blue-600 disabled:bg-light-gray disabled:opacity-75 dark:hover:bg-blue-600 disabled:dark:bg-neutral-gray"
           onClick={handleSendMessage}
         />
       </div>
