@@ -3,8 +3,8 @@ import { useMutation } from '@tanstack/react-query';
 
 import useChat from '@/hooks/useChat';
 
-import PromptIdeas from './components/prompt-idea';
-import PromptTextarea from './components/prompt-textarea';
+import Ideas from './components/ideas';
+import TextArea from './components/textarea';
 import Titles from './components/titles';
 
 const AiPrompt = () => {
@@ -25,8 +25,8 @@ const AiPrompt = () => {
   return (
     <div className="flex w-[42rem] flex-col items-center justify-center p-4">
       <Titles />
-      <PromptTextarea sendMessage={sendMessage} />
-      <PromptIdeas />
+      <TextArea sendMessage={sendMessage} />
+      <Ideas />
     </div>
   );
 };

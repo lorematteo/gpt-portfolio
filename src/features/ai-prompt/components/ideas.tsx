@@ -4,14 +4,14 @@ import React, { useState } from 'react';
 import { PROMPT_IDEAS } from '@/const/main';
 import { cn } from '@/utils/cn';
 
-interface PromptIdeaProps {
+interface IdeaProps {
   icon?: React.ReactNode;
   label: string;
   className?: string;
   onClick?: () => void;
 }
 
-const PromptIdea: React.FC<PromptIdeaProps> = ({ icon, label, className, onClick }) => {
+const Idea: React.FC<IdeaProps> = ({ icon, label, className, onClick }) => {
   return (
     <button
       onClick={onClick}
@@ -26,7 +26,7 @@ const PromptIdea: React.FC<PromptIdeaProps> = ({ icon, label, className, onClick
   );
 };
 
-const PromptIdeas: React.FC = () => {
+const Ideas: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const limit = 3;
   const size = PROMPT_IDEAS.length;
@@ -40,7 +40,7 @@ const PromptIdeas: React.FC = () => {
       {PROMPT_IDEAS.map((idea, index) => {
         if (index == limit)
           return (
-            <PromptIdea
+            <Idea
               key={index}
               label="More"
               onClick={handleShowMore}
@@ -49,16 +49,16 @@ const PromptIdeas: React.FC = () => {
           );
         if (index >= limit)
           return (
-            <PromptIdea
+            <Idea
               key={index}
               icon={idea.icon}
               label={idea.label}
               className={showAll ? 'opacity-100' : 'opacity-0'}
             />
           );
-        return <PromptIdea key={index} icon={idea.icon} label={idea.label} />;
+        return <Idea key={index} icon={idea.icon} label={idea.label} />;
       })}
-      <PromptIdea
+      <Idea
         icon={PROMPT_IDEAS[size - 1].icon}
         label={PROMPT_IDEAS[size - 1].label}
         className={showAll ? 'opacity-100' : 'opacity-0'}
@@ -67,4 +67,4 @@ const PromptIdeas: React.FC = () => {
   );
 };
 
-export default PromptIdeas;
+export default Ideas;

@@ -6,11 +6,11 @@ import ArrowUpIcon from '@/assets/icons/arrow-up';
 import IconButton from '@/components/buttons/icon-button';
 import useAutosizeTextarea from '@/hooks/useAutoSizeTextarea';
 
-interface PromptTextareaProps {
+interface TextAreaProps {
   sendMessage: UseMutationResult<void, Error, string, void>;
 }
 
-const PromptTextarea: React.FC<PromptTextareaProps> = ({ sendMessage }) => {
+const TextArea: React.FC<TextAreaProps> = ({ sendMessage }) => {
   const [message, setMessage] = useState('');
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -62,4 +62,4 @@ const PromptTextarea: React.FC<PromptTextareaProps> = ({ sendMessage }) => {
   );
 };
 
-export default PromptTextarea;
+export default TextArea;
