@@ -20,8 +20,8 @@ export async function POST(req: NextRequest) {
   const readableStream = new ReadableStream({
     async start(controller) {
       try {
-        const stream = await client.chat.stream({
-          model: 'mistral-tiny',
+        const stream = await client.agents.stream({
+          agentId: 'ag:d794050f:20250211:matteogpt:20eb8a15',
           messages: [{ role: 'user', content: message }],
         });
 
