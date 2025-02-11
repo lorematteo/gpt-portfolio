@@ -1,6 +1,6 @@
 'use client';
 import { UseMutationResult } from '@tanstack/react-query';
-import React, { useRef, useState } from 'react';
+import React, { KeyboardEvent, useRef, useState } from 'react';
 
 import ArrowUpIcon from '@/assets/icons/arrow-up';
 import IconButton from '@/components/buttons/icon-button';
@@ -32,6 +32,13 @@ const TextArea: React.FC<TextAreaProps> = ({ sendMessage }) => {
     sendMessage.mutate(message);
   };
 
+  const handleKeyPress = (evt: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (evt.key === 'Enter' && !evt.shiftKey) {
+      evt.preventDefault();
+      handleSendMessage();
+    }
+  };
+
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <div
@@ -43,6 +50,7 @@ const TextArea: React.FC<TextAreaProps> = ({ sendMessage }) => {
       <textarea
         ref={textAreaRef}
         onChange={handleChange}
+        onKeyDown={handleKeyPress}
         rows={1}
         value={message}
         className="max-h-64 w-full resize-none appearance-none bg-transparent px-3 text-gray-900 outline-none dark:text-gray-100"
