@@ -10,8 +10,10 @@ interface ParsedData {
 
 const useChat = () => {
   const [response, setResponse] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const sendChatMessage = async (message: string) => {
+    setLoading(true);
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
@@ -21,6 +23,7 @@ const useChat = () => {
         body: JSON.stringify({ message }),
       });
 
+      setLoading(false);
       if (!response.ok) {
         throw new Error('Failed to fetch chat response');
       }
@@ -66,6 +69,7 @@ const useChat = () => {
 
   return {
     response,
+    isLoading: loading,
     sendChatMessage,
   };
 };

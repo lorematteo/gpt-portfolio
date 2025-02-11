@@ -4,12 +4,12 @@ import { useMutation } from '@tanstack/react-query';
 import useChat from '@/hooks/useChat';
 
 import Ideas from './components/ideas';
+import Response from './components/response';
 import TextArea from './components/textarea';
 import Titles from './components/titles';
 
 const AiPrompt = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { response, sendChatMessage } = useChat();
+  const { response, isLoading, sendChatMessage } = useChat();
 
   const sendMessage = useMutation({
     mutationKey: ['sendMessage'],
@@ -24,6 +24,7 @@ const AiPrompt = () => {
 
   return (
     <div className="flex w-[42rem] flex-col items-center justify-center p-4">
+      <Response response={response} loading={isLoading} />
       <Titles />
       <TextArea sendMessage={sendMessage} />
       <Ideas />
