@@ -27,7 +27,7 @@ const AiPrompt = () => {
       <Response response={response} loading={isLoading} />
       <Titles />
       <TextArea sendMessage={sendMessage} />
-      <Ideas />
+      <Ideas sendMessage={sendMessage} />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 'use client';
+import { UseMutationResult } from '@tanstack/react-query';
 import React, { useState } from 'react';
 
 import { PROMPT_IDEAS } from '@/const/main';
@@ -26,7 +27,11 @@ const Idea: React.FC<IdeaProps> = ({ icon, label, className, onClick }) => {
   );
 };
 
-const Ideas: React.FC = () => {
+interface IdeasProps {
+  sendMessage: UseMutationResult<void, Error, string, void>;
+}
+
+const Ideas: React.FC<IdeasProps> = ({ sendMessage }) => {
   const [showAll, setShowAll] = useState(false);
   const limit = 3;
   const size = PROMPT_IDEAS.length;
@@ -53,14 +58,23 @@ const Ideas: React.FC = () => {
               key={index}
               icon={idea.icon}
               label={idea.label}
+              onClick={() => sendMessage.mutate(idea.label)}
               className={showAll ? 'opacity-100' : 'opacity-0'}
             />
           );
-        return <Idea key={index} icon={idea.icon} label={idea.label} />;
+        return (
+          <Idea
+            key={index}
+            icon={idea.icon}
+            label={idea.label}
+            onClick={() => sendMessage.mutate(idea.label)}
+          />
+        );
       })}
       <Idea
         icon={PROMPT_IDEAS[size - 1].icon}
         label={PROMPT_IDEAS[size - 1].label}
+        onClick={() => sendMessage.mutate(PROMPT_IDEAS[size - 1].label)}
         className={showAll ? 'opacity-100' : 'opacity-0'}
       />
     </div>
