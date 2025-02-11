@@ -5,6 +5,8 @@ import { Inter } from 'next/font/google';
 
 import { MainLayout } from '@/layouts/main-layout';
 
+import Providers from './provdiers';
+
 const inter = Inter({
   variable: '--font-primary',
   subsets: ['latin'],
@@ -25,7 +27,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} bg-white font-primary text-black dark:bg-dark-gray dark:text-white`}
       >
-        <MainLayout>{children}</MainLayout>
+        <Providers>
+          <MainLayout>{children}</MainLayout>
+        </Providers>
       </body>
     </html>
   );
