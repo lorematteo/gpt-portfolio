@@ -41,6 +41,7 @@ export default [
     'plugin:jsx-a11y/recommended',
     'plugin:tailwindcss/recommended',
     'plugin:prettier/recommended',
+    'plugin:@tanstack/query/recommended',
     'prettier'
   ),
   {
@@ -80,6 +81,7 @@ export default [
       'tailwindcss/no-contradicting-classname': 'error',
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
+      '@tanstack/query/exhaustive-deps': 'warn',
       'no-console': [
         2,
         {

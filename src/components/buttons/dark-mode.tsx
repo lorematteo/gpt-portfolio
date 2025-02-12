@@ -1,5 +1,6 @@
 'use client';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import dynamic from 'next/dynamic';
 
 import SunMoonIcon from '@/assets/icons/sun-moon';
 import { useDarkMode } from '@/hooks/useDarkMode';
@@ -19,4 +20,4 @@ const DarkModeButton: React.FC = () => {
   }
 };
 
-export default DarkModeButton;
+export default dynamic(() => Promise.resolve(DarkModeButton), { ssr: false });
