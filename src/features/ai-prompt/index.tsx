@@ -23,7 +23,7 @@ const AiPrompt = () => {
   });
 
   return (
-    <div className="flex w-[42rem] flex-col items-center justify-center p-4">
+    <div className="flex max-w-2xl flex-col items-center justify-center p-4 sm:min-w-[42rem]">
       <Response response={response} loading={isLoading} />
       <Titles />
       <TextArea sendMessage={sendMessage} />

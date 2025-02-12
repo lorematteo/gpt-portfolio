@@ -13,7 +13,7 @@ export const MainLayout = ({ children, className }: MainLayoutProps) => {
 
   return (
     <div className={wrapperStyles}>
-      <header className="flex h-14 flex-row-reverse px-4 py-3">
+      <header className="absolute right-0 px-4 py-3">
         <DarkModeButton />
       </header>
       <main className="flex flex-1">{children}</main>
