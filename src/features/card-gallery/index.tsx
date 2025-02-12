@@ -1,6 +1,8 @@
+import { EDUCATIONS } from '@/const/education';
 import { PROJECTS } from '@/const/projects';
 
 import Card from './components/card';
+import EducationCard from './components/cards/education';
 import PianoCard from './components/cards/piano';
 import ProjectCard from './components/cards/project';
 
@@ -10,7 +12,7 @@ const LeftCardsGallery = () => {
       <ProjectCard project={PROJECTS['f1-nft-card-packs']} />
       <PianoCard />
       <div className="col-span-4 flex flex-col gap-4">
-        <Card size="lg" />
+        <EducationCard education={EDUCATIONS['efrei-paris']} />
         <Card />
       </div>
       <Card className="col-span-2 h-full" />
@@ -28,7 +30,7 @@ const RightCardsGallery = () => {
       <Card size="lg" className="col-span-6" />
       <ProjectCard project={PROJECTS['pratico']} />
       <div className="col-span-4 flex flex-col gap-4">
-        <Card size="lg" />
+        <EducationCard education={EDUCATIONS['saint-remi']} />
         <Card />
       </div>
       <Card className="col-span-2 h-full" />

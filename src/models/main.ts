@@ -9,3 +9,10 @@ export type Project = {
   image: string;
   url: string;
 };
+
+export type Education = {
+  title: string;
+  description: string;
+  image: string;
+  courses: string[];
+};
