@@ -16,3 +16,9 @@ export type Education = {
   image: string;
   courses: string[];
 };
+
+export type Language = {
+  title: string;
+  level: string;
+  image: string;
+};

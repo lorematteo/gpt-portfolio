@@ -3,6 +3,7 @@ import { PROJECTS } from '@/const/projects';
 
 import Card from './components/card';
 import EducationCard from './components/cards/education';
+import LanguagesCard from './components/cards/languages';
 import PianoCard from './components/cards/piano';
 import ProjectCard from './components/cards/project';
 
@@ -15,7 +16,7 @@ const LeftCardsGallery = () => {
         <EducationCard education={EDUCATIONS['efrei-paris']} />
         <Card />
       </div>
-      <Card className="col-span-2 h-full" />
+      <LanguagesCard />
       <Card size="xl" className="col-span-6" />
       <Card className="col-span-6" />
       <Card size="lg" className="col-span-6" />
