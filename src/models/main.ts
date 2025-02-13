@@ -29,3 +29,9 @@ export type Carreer = {
   image: string;
   achievments: string[];
 };
+
+export type Social = {
+  name: string;
+  icon: React.ReactNode;
+  url: string;
+};

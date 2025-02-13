@@ -1,6 +1,7 @@
 import { CARREERS } from '@/const/carreer';
 import { EDUCATIONS } from '@/const/education';
 import { PROJECTS } from '@/const/projects';
+import { SOCIALS } from '@/const/socials';
 
 import Card from './components/card';
 import CarreerCard from './components/cards/carreer';
@@ -10,6 +11,7 @@ import LanguagesCard from './components/cards/languages';
 import MountainCard from './components/cards/mountain';
 import PianoCard from './components/cards/piano';
 import ProjectCard from './components/cards/project';
+import SocialsCard from './components/cards/socials';
 
 const LeftCardsGallery = () => {
   return (
@@ -48,7 +50,7 @@ const RightCardsGallery = () => {
       <ProjectCard project={PROJECTS['pratico']} />
       <div className="col-span-4 flex flex-col gap-4">
         <EducationCard education={EDUCATIONS['saint-remi']} />
-        <Card />
+        <SocialsCard socials={SOCIALS} />
       </div>
       <MountainCard />
       <ProjectCard project={PROJECTS['prepa-star']} />
