@@ -6,6 +6,7 @@ import { SOCIALS } from '@/const/socials';
 import Card from './components/card';
 import CarreerCard from './components/cards/carreer';
 import EducationCard from './components/cards/education';
+import FreelanceCard from './components/cards/freelance';
 import GalleryCard from './components/cards/gallery';
 import LanguagesCard from './components/cards/languages';
 import MountainCard from './components/cards/mountain';
@@ -20,7 +21,7 @@ const LeftCardsGallery = () => {
       <PianoCard />
       <div className="col-span-4 flex flex-col gap-4">
         <EducationCard education={EDUCATIONS['efrei-paris']} />
-        <Card />
+        <FreelanceCard />
       </div>
       <LanguagesCard />
       <GalleryCard
