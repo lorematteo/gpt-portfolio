@@ -7,6 +7,7 @@ import CarreerCard from './components/cards/carreer';
 import EducationCard from './components/cards/education';
 import GalleryCard from './components/cards/gallery';
 import LanguagesCard from './components/cards/languages';
+import MountainCard from './components/cards/mountain';
 import PianoCard from './components/cards/piano';
 import ProjectCard from './components/cards/project';
 
@@ -49,7 +50,7 @@ const RightCardsGallery = () => {
         <EducationCard education={EDUCATIONS['saint-remi']} />
         <Card />
       </div>
-      <Card className="col-span-2 h-full" />
+      <MountainCard />
       <ProjectCard project={PROJECTS['prepa-star']} />
       <Card size="xl" className="col-span-6" />
     </div>
