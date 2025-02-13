@@ -1,7 +1,9 @@
+import { CARREERS } from '@/const/carreer';
 import { EDUCATIONS } from '@/const/education';
 import { PROJECTS } from '@/const/projects';
 
 import Card from './components/card';
+import CarreerCard from './components/cards/carreer';
 import EducationCard from './components/cards/education';
 import GalleryCard from './components/cards/gallery';
 import LanguagesCard from './components/cards/languages';
@@ -41,7 +43,7 @@ const RightCardsGallery = () => {
   return (
     <div className="grid w-full max-w-xl grid-cols-6 gap-4 overflow-y-hidden px-4 max-xl:hidden">
       <ProjectCard project={PROJECTS['matflix']} />
-      <Card size="lg" className="col-span-6" />
+      <CarreerCard carreer={CARREERS['sogec']} />
       <ProjectCard project={PROJECTS['pratico']} />
       <div className="col-span-4 flex flex-col gap-4">
         <EducationCard education={EDUCATIONS['saint-remi']} />

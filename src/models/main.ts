@@ -22,3 +22,10 @@ export type Language = {
   level: string;
   image: string;
 };
+
+export type Carreer = {
+  title: string;
+  description: string;
+  image: string;
+  achievments: string[];
+};
