@@ -10,12 +10,12 @@ interface GalleryCardProps {
 
 const GalleryCard: React.FC<GalleryCardProps> = ({ title, description, images }) => {
   return (
-    <Card size="xl" className="col-span-6 flex flex-col px-4 py-5 min-[1408px]:justify-between">
+    <Card size="xl" className="col-span-6 flex flex-col px-4 py-5">
       <div className="flex flex-col">
         <h5 className="text-sm font-semibold">{title}</h5>
-        <p className="text-xs max-[1408px]:hidden">{description}</p>
+        <p className="text-xs max-2xl:hidden">{description}</p>
       </div>
-      <div className="grid grid-cols-3 gap-2 max-[1408px]:py-4">
+      <div className="grid grid-cols-3 gap-2 py-4">
         {images.map((image, index) => (
           <Image
             key={index}

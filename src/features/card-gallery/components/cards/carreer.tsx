@@ -20,7 +20,7 @@ const CarreerCard: React.FC<CarreerCardProps> = ({ carreer }) => {
       />
       <p className="pt-2 text-xs opacity-65">{carreer.description}</p>
       <h5 className="pb-2 text-sm font-semibold">{carreer.title}</h5>
-      <ul className="list-none text-xs max-[1408px]:hidden">
+      <ul className="list-none text-xs max-2xl:hidden">
         {carreer.achievments.map((achievment, index) => (
           <li key={index}>▹ {achievment}</li>
         ))}
