@@ -9,7 +9,7 @@ interface ParsedData {
 }
 
 const useChat = () => {
-  const [response, setResponse] = useState('');
+  const [response, setResponse] = useState('Hello! How can I assist you today?');
   const [loading, setLoading] = useState(false);
 
   const sendChatMessage = async (message: string) => {
