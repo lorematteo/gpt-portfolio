@@ -59,7 +59,7 @@ const Ideas: React.FC<IdeasProps> = ({ sendMessage }) => {
               icon={idea.icon}
               label={idea.label}
               onClick={() => sendMessage.mutate(idea.label)}
-              className={showAll ? 'opacity-100' : 'opacity-0'}
+              className={showAll ? 'visible opacity-100' : 'invisible opacity-0'}
             />
           );
         return (
@@ -75,7 +75,7 @@ const Ideas: React.FC<IdeasProps> = ({ sendMessage }) => {
         icon={PROMPT_IDEAS[size - 1].icon}
         label={PROMPT_IDEAS[size - 1].label}
         onClick={() => sendMessage.mutate(PROMPT_IDEAS[size - 1].label)}
-        className={showAll ? 'opacity-100' : 'opacity-0'}
+        className={showAll ? 'visible opacity-100' : 'invisible opacity-0'}
       />
     </div>
   );
