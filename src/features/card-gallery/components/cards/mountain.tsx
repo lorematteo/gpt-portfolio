@@ -11,7 +11,7 @@ const MountainCard: React.FC = () => {
         alt="Mountain"
         width={100}
         height={100}
-        className="w-full rounded-3xl object-cover"
+        className="w-full rounded-3xl object-cover opacity-70"
       />
     </Card>
   );
