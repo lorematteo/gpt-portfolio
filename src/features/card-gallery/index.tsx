@@ -15,7 +15,7 @@ import SocialsCard from './components/cards/socials';
 
 const LeftCardsGallery = () => {
   return (
-    <div className="grid w-full max-w-xl grid-cols-6 gap-4 overflow-y-hidden px-4 max-xl:hidden">
+    <div className="grid w-full max-w-xl auto-rows-min grid-cols-6 gap-4 overflow-y-hidden px-4 pb-4 max-xl:hidden">
       <ProjectCard project={PROJECTS['f1-nft-card-packs']} />
       <PianoCard />
       <div className="col-span-4 flex flex-col gap-4">
@@ -42,7 +42,7 @@ technologies for the first time."
 
 const RightCardsGallery = () => {
   return (
-    <div className="grid w-full max-w-xl grid-cols-6 gap-4 overflow-y-hidden px-4 max-xl:hidden">
+    <div className="grid w-full max-w-xl auto-rows-min grid-cols-6 gap-4 overflow-y-hidden px-4 pb-4 max-xl:hidden">
       <ProjectCard project={PROJECTS['matflix']} />
       <CarreerCard carreer={CARREERS['sogec']} />
       <ProjectCard project={PROJECTS['pratico']} />
