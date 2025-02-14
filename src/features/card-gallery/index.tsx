@@ -3,7 +3,6 @@ import { EDUCATIONS } from '@/const/education';
 import { PROJECTS } from '@/const/projects';
 import { SOCIALS } from '@/const/socials';
 
-import Card from './components/card';
 import CarreerCard from './components/cards/carreer';
 import EducationCard from './components/cards/education';
 import FreelanceCard from './components/cards/freelance';
@@ -37,8 +36,6 @@ technologies for the first time."
           '/images/nepal/6.jpg',
         ]}
       />
-      <Card className="col-span-6" />
-      <Card size="lg" className="col-span-6" />
     </div>
   );
 };
@@ -55,7 +52,6 @@ const RightCardsGallery = () => {
       </div>
       <MountainCard />
       <ProjectCard project={PROJECTS['prepa-star']} />
-      <Card size="xl" className="col-span-6" />
     </div>
   );
 };
