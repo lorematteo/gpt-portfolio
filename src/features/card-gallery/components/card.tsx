@@ -29,6 +29,7 @@ const Card: React.FC<CardProps> = ({ name, discoverable, size = 'md', className,
   });
 
   const handleClick = () => {
+    if (discovered) return;
     sendMessage.mutate(discoverable);
     setDiscovered(true);
     localStorage.setItem(`discovered-${name}`, JSON.stringify(true));
@@ -50,6 +51,7 @@ const Card: React.FC<CardProps> = ({ name, discoverable, size = 'md', className,
         size === 'md' && 'h-24',
         size === 'lg' && 'h-52',
         size === 'xl' && 'h-80',
+        discovered && 'cursor-default',
         className
       )}
       onClick={handleClick}
