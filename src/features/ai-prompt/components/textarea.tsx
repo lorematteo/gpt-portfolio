@@ -37,8 +37,9 @@ const TextArea: React.FC = () => {
   };
 
   const handleSendMessage = () => {
-    setMessage('');
+    if (!message) return;
     sendMessage.mutate(message);
+    setMessage('');
   };
 
   const handleKeyPress = (evt: KeyboardEvent<HTMLTextAreaElement>) => {
