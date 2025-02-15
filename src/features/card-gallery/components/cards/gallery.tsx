@@ -3,15 +3,27 @@ import Image from 'next/image';
 import Card from '../card';
 
 interface GalleryCardProps {
+  name: string;
   discoverable: string;
   title: string;
   description: string;
   images: string[];
 }
 
-const GalleryCard: React.FC<GalleryCardProps> = ({ discoverable, title, description, images }) => {
+const GalleryCard: React.FC<GalleryCardProps> = ({
+  name,
+  discoverable,
+  title,
+  description,
+  images,
+}) => {
   return (
-    <Card discoverable={discoverable} size="xl" className="col-span-6 flex flex-col px-4 py-5">
+    <Card
+      name={name}
+      discoverable={discoverable}
+      size="xl"
+      className="col-span-6 flex flex-col px-4 py-5"
+    >
       <div className="flex flex-col">
         <h5 className="text-sm font-semibold">{title}</h5>
         <p className="text-xs max-2xl:hidden">{description}</p>

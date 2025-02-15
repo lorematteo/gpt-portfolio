@@ -7,13 +7,15 @@ import { Project } from '@/models/main';
 import Card from '../card';
 
 interface ProjectCardProps {
+  name: string;
   discoverable: string;
   project: Project;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ discoverable, project }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ name, discoverable, project }) => {
   return (
     <Card
+      name={name}
       discoverable={discoverable}
       className="col-span-6 flex flex-row items-center gap-3 px-4 py-3.5"
     >

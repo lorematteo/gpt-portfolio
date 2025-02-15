@@ -1,20 +1,21 @@
 'use client';
 import { useMutation } from '@tanstack/react-query';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { ChatContext } from '@/app/provdiers';
 import { cn } from '@/utils/cn';
 
 interface CardProps {
+  name: string;
   discoverable: string;
   size?: 'md' | 'lg' | 'xl';
   className?: string;
   children?: React.ReactNode;
 }
 
-const Card: React.FC<CardProps> = ({ discoverable, size = 'md', className, children }) => {
+const Card: React.FC<CardProps> = ({ name, discoverable, size = 'md', className, children }) => {
   const { sendChatMessage } = useContext(ChatContext);
-  const [discovered, setDiscovered] = useState(false);
+  const [discovered, setDiscovered] = useState<boolean>(false);
 
   const sendMessage = useMutation({
     mutationKey: ['sendMessage'],
@@ -30,7 +31,15 @@ const Card: React.FC<CardProps> = ({ discoverable, size = 'md', className, child
   const handleClick = () => {
     sendMessage.mutate(discoverable);
     setDiscovered(true);
+    localStorage.setItem(`discovered-${name}`, JSON.stringify(true));
   };
+
+  useEffect(() => {
+    const savedState = localStorage.getItem(`discovered-${name}`);
+    if (savedState) {
+      setDiscovered(JSON.parse(savedState) === true);
+    }
+  }, [name]);
 
   return (
     <div

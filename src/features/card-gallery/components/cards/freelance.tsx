@@ -5,6 +5,7 @@ import Card from '../card';
 const FreelanceCard = () => {
   return (
     <Card
+      name="freelance"
       discoverable="Ever worked as a freelancer ?"
       className="col-span-4 flex flex-row items-center justify-between p-4"
     >

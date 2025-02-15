@@ -7,6 +7,7 @@ import Card from '../card';
 const LanguagesCard = () => {
   return (
     <Card
+      name="languages"
       discoverable="Which languages do you feel comfortable chatting in ?"
       size="xl"
       className="col-span-2 flex flex-col justify-center gap-6 p-4"
