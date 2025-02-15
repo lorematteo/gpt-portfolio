@@ -5,7 +5,7 @@ import Card from '../card';
 const FreelanceCard = () => {
   return (
     <Card
-      discoverable="Ever worked as a freelancer"
+      discoverable="Ever worked as a freelancer ?"
       className="col-span-4 flex flex-row items-center justify-between p-4"
     >
       <Image src="/images/carreers/lorematteo-logo.png" alt="Lo Re Mattéo" width={80} height={80} />
