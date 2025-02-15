@@ -5,12 +5,17 @@ import { Carreer } from '@/models/main';
 import Card from '../card';
 
 interface CarreerCardProps {
+  discoverable: string;
   carreer: Carreer;
 }
 
-const CarreerCard: React.FC<CarreerCardProps> = ({ carreer }) => {
+const CarreerCard: React.FC<CarreerCardProps> = ({ discoverable, carreer }) => {
   return (
-    <Card size="lg" className="col-span-6 flex flex-col items-start p-4">
+    <Card
+      discoverable={discoverable}
+      size="lg"
+      className="col-span-6 flex flex-col items-start p-4"
+    >
       <Image
         src={carreer.image}
         alt={carreer.title}

@@ -3,12 +3,16 @@ import { Social } from '@/models/main';
 import Card from '../card';
 
 interface SocialsCardProps {
+  discoverable: string;
   socials: Social[];
 }
 
-const SocialsCard: React.FC<SocialsCardProps> = ({ socials }) => {
+const SocialsCard: React.FC<SocialsCardProps> = ({ discoverable, socials }) => {
   return (
-    <Card className="col-span-4 flex flex-row items-center justify-between p-4 2xl:p-8">
+    <Card
+      discoverable={discoverable}
+      className="col-span-4 flex flex-row items-center justify-between p-4 2xl:p-8"
+    >
       {socials.map((social) => (
         <a
           key={social.name}

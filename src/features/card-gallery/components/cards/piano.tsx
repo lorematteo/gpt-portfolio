@@ -4,7 +4,10 @@ import Card from '../card';
 
 const PianoCard = () => {
   return (
-    <Card className="col-span-6 flex flex-row items-center justify-between gap-1.5 px-4">
+    <Card
+      discoverable="When you're not busy coding, what do you enjoy doing in your spare time?"
+      className="col-span-6 flex flex-row items-center justify-between gap-1.5 px-4"
+    >
       <div className="flex flex-col py-4">
         <h5 className="text-sm font-semibold">Piano Enthousiast</h5>
         <p className="text-xs">Since 2023</p>

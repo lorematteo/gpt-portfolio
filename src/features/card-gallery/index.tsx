@@ -16,14 +16,21 @@ import SocialsCard from './components/cards/socials';
 const LeftCardsGallery = () => {
   return (
     <div className="grid w-full max-w-xl auto-rows-min grid-cols-6 gap-4 overflow-y-hidden px-4 pb-4 max-xl:hidden">
-      <ProjectCard project={PROJECTS['f1-nft-card-packs']} />
+      <ProjectCard
+        discoverable="Have you ever worked on a web3 project?"
+        project={PROJECTS['f1-nft-card-packs']}
+      />
       <PianoCard />
       <div className="col-span-4 flex flex-col gap-4">
-        <EducationCard education={EDUCATIONS['efrei-paris']} />
+        <EducationCard
+          discoverable="Can you tell me about your background in computer science?"
+          education={EDUCATIONS['efrei-paris']}
+        />
         <FreelanceCard />
       </div>
       <LanguagesCard />
       <GalleryCard
+        discoverable="What's your last trip ?"
         title="Nepal, Volunteering in a primary school"
         description="Taught computer literacy to young students in rural Nepal, enabling them to discover essential digital skills and modern
 technologies for the first time."
@@ -43,15 +50,27 @@ technologies for the first time."
 const RightCardsGallery = () => {
   return (
     <div className="grid w-full max-w-xl auto-rows-min grid-cols-6 gap-4 overflow-y-hidden px-4 pb-4 max-xl:hidden">
-      <ProjectCard project={PROJECTS['matflix']} />
-      <CarreerCard carreer={CARREERS['sogec']} />
-      <ProjectCard project={PROJECTS['pratico']} />
+      <ProjectCard
+        discoverable="Are you planning to put Netflix out of business with Matflix?"
+        project={PROJECTS['matflix']}
+      />
+      <CarreerCard
+        discoverable="Have you ever worked for a big company?"
+        carreer={CARREERS['sogec']}
+      />
+      <ProjectCard
+        discoverable="I heard you tried to shake things up in the French education scene. How did that go?"
+        project={PROJECTS['pratico']}
+      />
       <div className="col-span-4 flex flex-col gap-4">
-        <EducationCard education={EDUCATIONS['saint-remi']} />
-        <SocialsCard socials={SOCIALS} />
+        <EducationCard
+          discoverable="Did you study anything else before diving into computer science?"
+          education={EDUCATIONS['saint-remi']}
+        />
+        <SocialsCard discoverable="How can we connect and chat more?" socials={SOCIALS} />
       </div>
       <MountainCard />
-      <ProjectCard project={PROJECTS['prepa-star']} />
+      <ProjectCard discoverable="Ever created a mobile app?" project={PROJECTS['prepa-star']} />
     </div>
   );
 };
