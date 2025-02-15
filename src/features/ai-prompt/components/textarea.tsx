@@ -1,18 +1,27 @@
 'use client';
-import { UseMutationResult } from '@tanstack/react-query';
-import React, { KeyboardEvent, useRef, useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import React, { KeyboardEvent, useContext, useRef, useState } from 'react';
 
+import { ChatContext } from '@/app/provdiers';
 import ArrowUpIcon from '@/assets/icons/arrow-up';
 import IconButton from '@/components/buttons/icon-button';
 import useAutosizeTextarea from '@/hooks/useAutoSizeTextarea';
 
-interface TextAreaProps {
-  sendMessage: UseMutationResult<void, Error, string, void>;
-}
-
-const TextArea: React.FC<TextAreaProps> = ({ sendMessage }) => {
+const TextArea: React.FC = () => {
+  const { sendChatMessage } = useContext(ChatContext);
   const [message, setMessage] = useState('');
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
+  const sendMessage = useMutation({
+    mutationKey: ['sendMessage'],
+    mutationFn: async (message: string) => {
+      await sendChatMessage(message);
+    },
+    onMutate: () => {},
+    onError: () => {},
+    onSuccess: () => {},
+    onSettled: () => {},
+  });
 
   useAutosizeTextarea(textAreaRef.current, message);
 
