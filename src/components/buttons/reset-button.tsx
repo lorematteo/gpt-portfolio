@@ -26,7 +26,10 @@ const ResetButton = () => {
   if (anyDiscovered === false) return null;
 
   return (
-    <button className="text-xs opacity-50 hover:underline" onClick={clearLocalStorage}>
+    <button
+      className="hidden text-xs opacity-50 hover:underline xl:block"
+      onClick={clearLocalStorage}
+    >
       Reset cards
     </button>
   );
