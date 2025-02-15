@@ -21,7 +21,7 @@ const Titles = () => {
         priority
         className="relative -bottom-4"
       />
-      <h1 className="text-2xl font-medium">Hi, I&apos;m MatteoGPT.</h1>
+      <h1 className="text-2xl font-medium">Hi, I&apos;m MattéoGPT.</h1>
       <p className="h-5 text-sm">{subheadline}</p>
     </div>
   );
