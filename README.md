@@ -5,6 +5,8 @@
 
 MattéoGPT is a **Next.js** application powered by **MistralAI** that allows users to engage in conversations about my personal and professional journey. With a smooth AI prompting interface, a dynamic discoverable cards gallery, and full light/dark mode support, this project provides an immersive way to explore my story.
 
+> 🚀 **[Live Demo](https://matteo-gpt.vercel.app/)**
+
 <br>
 
 ## **🌟 Features**  
