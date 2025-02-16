@@ -8,7 +8,7 @@ import IconButton from '@/components/buttons/icon-button';
 import useAutosizeTextarea from '@/hooks/useAutoSizeTextarea';
 
 const TextArea: React.FC = () => {
-  const { sendChatMessage } = useContext(ChatContext);
+  const { isLoading, isWriting, sendChatMessage } = useContext(ChatContext);
   const [message, setMessage] = useState('');
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -38,6 +38,7 @@ const TextArea: React.FC = () => {
 
   const handleSendMessage = () => {
     if (!message) return;
+    if (isLoading || isWriting) return;
     sendMessage.mutate(message);
     setMessage('');
   };

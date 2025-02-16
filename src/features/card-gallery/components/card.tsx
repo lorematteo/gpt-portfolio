@@ -16,7 +16,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ name, discoverable, size = 'md', className, children }) => {
-  const { sendChatMessage } = useContext(ChatContext);
+  const { isLoading, isWriting, sendChatMessage } = useContext(ChatContext);
   const [discovered, setDiscovered] = useState<boolean>(false);
 
   const sendMessage = useMutation({
@@ -32,6 +32,7 @@ const Card: React.FC<CardProps> = ({ name, discoverable, size = 'md', className,
 
   const handleClick = () => {
     if (discovered) return;
+    if (isLoading || isWriting) return;
     sendMessage.mutate(discoverable);
     setDiscovered(true);
     localStorage.setItem(`discovered-${name}`, JSON.stringify(true));

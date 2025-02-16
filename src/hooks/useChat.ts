@@ -11,10 +11,19 @@ interface ParsedData {
 const useChat = () => {
   const [response, setResponse] = useState('Hello! How can I assist you today?');
   const [loading, setLoading] = useState(false);
+  const [writing, setWriting] = useState(false);
 
   const sendChatMessage = async (message: string) => {
     if (!message) {
       console.error('Message is required');
+      return;
+    }
+    if (loading) {
+      console.error('Chat is already loading');
+      return;
+    }
+    if (writing) {
+      console.error('Chat is already writing');
       return;
     }
     setLoading(true);
@@ -28,6 +37,7 @@ const useChat = () => {
       });
 
       setLoading(false);
+
       if (!response.ok) {
         throw new Error('Failed to fetch chat response');
       }
@@ -35,10 +45,13 @@ const useChat = () => {
       await processStream(response.body);
     } catch (error) {
       console.error('Error sending chat message:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
   const processStream = async (readableStream: ReadableStream<Uint8Array> | null) => {
+    setWriting(true);
     const reader = readableStream?.getReader();
     const decoder = new TextDecoder();
     let fullBotMessage = '';
@@ -68,12 +81,14 @@ const useChat = () => {
       console.error('Error processing stream:', error);
     } finally {
       reader.releaseLock();
+      setWriting(false);
     }
   };
 
   return {
     response,
     isLoading: loading,
+    isWriting: writing,
     sendChatMessage,
   };
 };

@@ -8,6 +8,7 @@ export const ChatContext = createContext(
   {} as {
     response: string;
     isLoading: boolean;
+    isWriting: boolean;
     sendChatMessage: (message: string) => Promise<void>;
   }
 );
@@ -17,13 +18,13 @@ interface ProvidersProps {
 }
 
 const Providers: React.FC<ProvidersProps> = ({ children }) => {
-  const { response, isLoading, sendChatMessage } = useChat();
+  const { response, isLoading, isWriting, sendChatMessage } = useChat();
   const queryClient = new QueryClient();
 
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <ChatContext.Provider value={{ response, isLoading, sendChatMessage }}>
+        <ChatContext.Provider value={{ response, isLoading, isWriting, sendChatMessage }}>
           {children}
         </ChatContext.Provider>
       </QueryClientProvider>
