@@ -1,11 +1,13 @@
 import Image from 'next/image';
 
+import { CARD_NAMES } from '@/const/main';
+
 import Card from '../card';
 
 const MountainCard: React.FC = () => {
   return (
     <Card
-      name="mountain"
+      name={CARD_NAMES[11]}
       discoverable="Anything crazy about you ?"
       size="xl"
       className="relative col-span-2"

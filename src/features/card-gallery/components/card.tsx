@@ -1,8 +1,10 @@
 'use client';
 import { useMutation } from '@tanstack/react-query';
+import { motion } from 'motion/react';
 import { useContext, useEffect, useState } from 'react';
 
 import { ChatContext } from '@/app/provdiers';
+import { CARD_DELAYS } from '@/const/main';
 import { cn } from '@/utils/cn';
 
 interface CardProps {
@@ -43,7 +45,7 @@ const Card: React.FC<CardProps> = ({ name, discoverable, size = 'md', className,
   }, [name]);
 
   return (
-    <div
+    <motion.div
       role="button"
       tabIndex={0}
       className={cn(
@@ -56,6 +58,9 @@ const Card: React.FC<CardProps> = ({ name, discoverable, size = 'md', className,
       )}
       onClick={handleClick}
       onKeyDown={(e) => e.key === 'Enter' && handleClick()}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: CARD_DELAYS[name] }}
     >
       {children}
       <div
@@ -68,7 +73,7 @@ const Card: React.FC<CardProps> = ({ name, discoverable, size = 'md', className,
           {discoverable}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -33,3 +33,35 @@ export const PROMPT_IDEAS: PromptIdea[] = [
     label: 'What’s your work experience?',
   },
 ];
+
+export const CARD_NAMES = [
+  'f1-nft-card-packs',
+  'piano',
+  'efrei-paris',
+  'freelance',
+  'languages',
+  'nepal',
+  'matflix',
+  'sogec',
+  'pratico',
+  'saint-remi',
+  'socials',
+  'mountain',
+  'prepa-star',
+];
+
+export const CARD_DELAYS: Record<string, number> = {
+  'f1-nft-card-packs': 0.5,
+  piano: 2.3,
+  'efrei-paris': 3.2,
+  freelance: 1.4,
+  languages: 1.0,
+  nepal: 2.8,
+  matflix: 1.7,
+  sogec: 0.9,
+  pratico: 3.4,
+  'saint-remi': 2.0,
+  socials: 1.2,
+  mountain: 2.6,
+  'prepa-star': 1.8,
+};

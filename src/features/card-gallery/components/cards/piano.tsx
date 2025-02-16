@@ -1,11 +1,13 @@
 import Image from 'next/image';
 
+import { CARD_NAMES } from '@/const/main';
+
 import Card from '../card';
 
 const PianoCard = () => {
   return (
     <Card
-      name="piano"
+      name={CARD_NAMES[1]}
       discoverable="When you're not busy coding, what do you enjoy doing in your spare time ?"
       className="col-span-6 flex flex-row items-center justify-between gap-1.5 px-4"
     >
