@@ -1,5 +1,6 @@
 import { CARREERS } from '@/const/carreer';
 import { EDUCATIONS } from '@/const/education';
+import { CARD_NAMES } from '@/const/main';
 import { PROJECTS } from '@/const/projects';
 import { SOCIALS } from '@/const/socials';
 
@@ -16,14 +17,24 @@ import SocialsCard from './components/cards/socials';
 const LeftCardsGallery = () => {
   return (
     <div className="grid w-full max-w-xl auto-rows-min grid-cols-6 gap-4 overflow-y-hidden px-4 pb-4 max-xl:hidden">
-      <ProjectCard project={PROJECTS['f1-nft-card-packs']} />
+      <ProjectCard
+        name={CARD_NAMES[0]}
+        discoverable="Have you ever worked on a web3 project ?"
+        project={PROJECTS['f1-nft-card-packs']}
+      />
       <PianoCard />
       <div className="col-span-4 flex flex-col gap-4">
-        <EducationCard education={EDUCATIONS['efrei-paris']} />
+        <EducationCard
+          name={CARD_NAMES[2]}
+          discoverable="Can you tell me about your computer science degree ?"
+          education={EDUCATIONS['efrei-paris']}
+        />
         <FreelanceCard />
       </div>
       <LanguagesCard />
       <GalleryCard
+        name={CARD_NAMES[5]}
+        discoverable="What's your last trip ?"
         title="Nepal, Volunteering in a primary school"
         description="Taught computer literacy to young students in rural Nepal, enabling them to discover essential digital skills and modern
 technologies for the first time."
@@ -43,15 +54,39 @@ technologies for the first time."
 const RightCardsGallery = () => {
   return (
     <div className="grid w-full max-w-xl auto-rows-min grid-cols-6 gap-4 overflow-y-hidden px-4 pb-4 max-xl:hidden">
-      <ProjectCard project={PROJECTS['matflix']} />
-      <CarreerCard carreer={CARREERS['sogec']} />
-      <ProjectCard project={PROJECTS['pratico']} />
+      <ProjectCard
+        name={CARD_NAMES[6]}
+        discoverable="Are you planning to put Netflix out of business with Matflix ?"
+        project={PROJECTS['matflix']}
+      />
+      <CarreerCard
+        name={CARD_NAMES[7]}
+        discoverable="Have you ever worked for a big company ?"
+        carreer={CARREERS['sogec']}
+      />
+      <ProjectCard
+        name={CARD_NAMES[8]}
+        discoverable="I heard you tried to revolutionize online teaching. How did that go?"
+        project={PROJECTS['pratico']}
+      />
       <div className="col-span-4 flex flex-col gap-4">
-        <EducationCard education={EDUCATIONS['saint-remi']} />
-        <SocialsCard socials={SOCIALS} />
+        <EducationCard
+          name={CARD_NAMES[9]}
+          discoverable="Did you study anything else before diving into computer science ?"
+          education={EDUCATIONS['saint-remi']}
+        />
+        <SocialsCard
+          name={CARD_NAMES[10]}
+          discoverable="How can we connect and chat more ?"
+          socials={SOCIALS}
+        />
       </div>
       <MountainCard />
-      <ProjectCard project={PROJECTS['prepa-star']} />
+      <ProjectCard
+        name={CARD_NAMES[12]}
+        discoverable="Ever created a mobile app ?"
+        project={PROJECTS['prepa-star']}
+      />
     </div>
   );
 };

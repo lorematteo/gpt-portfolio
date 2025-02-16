@@ -13,6 +13,10 @@ const useChat = () => {
   const [loading, setLoading] = useState(false);
 
   const sendChatMessage = async (message: string) => {
+    if (!message) {
+      console.error('Message is required');
+      return;
+    }
     setLoading(true);
     try {
       const response = await fetch('/api/chat', {

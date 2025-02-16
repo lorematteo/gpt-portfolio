@@ -1,7 +1,8 @@
 'use client';
-import { UseMutationResult } from '@tanstack/react-query';
-import React, { useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import React, { useContext, useState } from 'react';
 
+import { ChatContext } from '@/app/provdiers';
 import { PROMPT_IDEAS } from '@/const/main';
 import { cn } from '@/utils/cn';
 
@@ -27,14 +28,23 @@ const Idea: React.FC<IdeaProps> = ({ icon, label, className, onClick }) => {
   );
 };
 
-interface IdeasProps {
-  sendMessage: UseMutationResult<void, Error, string, void>;
-}
-
-const Ideas: React.FC<IdeasProps> = ({ sendMessage }) => {
+const Ideas: React.FC = () => {
+  const { sendChatMessage } = useContext(ChatContext);
   const [showAll, setShowAll] = useState(false);
+
   const limit = 3;
   const size = PROMPT_IDEAS.length;
+
+  const sendMessage = useMutation({
+    mutationKey: ['sendMessage'],
+    mutationFn: async (message: string) => {
+      await sendChatMessage(message);
+    },
+    onMutate: () => {},
+    onError: () => {},
+    onSuccess: () => {},
+    onSettled: () => {},
+  });
 
   const handleShowMore = () => {
     setShowAll(true);

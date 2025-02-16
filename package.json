@@ -21,6 +21,7 @@
     "@heroicons/react": "^2.2.0",
     "@mistralai/mistralai": "^1.5.0",
     "@tanstack/react-query": "^5.66.0",
+    "motion": "^12.4.3",
     "next": "15.1.6",
     "react": "19.0.0",
     "react-dom": "19.0.0"

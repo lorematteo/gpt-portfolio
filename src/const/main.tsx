@@ -8,10 +8,10 @@ import {
 import { PromptIdea } from '@/models/main';
 
 export const SUBHEALINES = [
-  "I'm MatteoGPT—your AI-powered peek into my brain. Ask me anything!",
+  "I'm MattéoGPT—your AI-powered peek into my brain. Ask me anything!",
   "Ask me anything—I promise I won't bite (unless you ask about my coding bugs).",
-  "Let's chat! I'm like ChatGPT, but with 100% more Matteo.",
-  "I'm MatteoGPT, the AI that's obsessed with me (in a healthy way). Ask me something!",
+  "Let's chat! I'm like ChatGPT, but with 100% more Mattéo.",
+  "I'm MattéoGPT, the AI that's obsessed with me (in a healthy way). Ask me something!",
   "Type a question below, and I'll tell you all about my work, life, and passions.",
 ];
 
@@ -33,3 +33,35 @@ export const PROMPT_IDEAS: PromptIdea[] = [
     label: 'What’s your work experience?',
   },
 ];
+
+export const CARD_NAMES = [
+  'f1-nft-card-packs',
+  'piano',
+  'efrei-paris',
+  'freelance',
+  'languages',
+  'nepal',
+  'matflix',
+  'sogec',
+  'pratico',
+  'saint-remi',
+  'socials',
+  'mountain',
+  'prepa-star',
+];
+
+export const CARD_DELAYS: Record<string, number> = {
+  'f1-nft-card-packs': 0.5,
+  piano: 2.3,
+  'efrei-paris': 3.2,
+  freelance: 1.4,
+  languages: 1.0,
+  nepal: 2.8,
+  matflix: 1.7,
+  sogec: 0.9,
+  pratico: 3.4,
+  'saint-remi': 2.0,
+  socials: 1.2,
+  mountain: 2.6,
+  'prepa-star': 1.8,
+};

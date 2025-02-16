@@ -5,12 +5,19 @@ import { Education } from '@/models/main';
 import Card from '../card';
 
 interface EducationCardProps {
+  name: string;
+  discoverable: string;
   education: Education;
 }
 
-const EducationCard: React.FC<EducationCardProps> = ({ education }) => {
+const EducationCard: React.FC<EducationCardProps> = ({ name, discoverable, education }) => {
   return (
-    <Card size="lg" className="col-span-6 flex flex-col items-start p-4">
+    <Card
+      name={name}
+      discoverable={discoverable}
+      size="lg"
+      className="col-span-6 flex flex-col items-start p-4"
+    >
       <Image
         src={education.image}
         alt={education.title}
