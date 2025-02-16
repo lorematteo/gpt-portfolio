@@ -1,7 +1,7 @@
 import {
   AcademicCapIcon,
-  BriefcaseIcon,
   EnvelopeIcon,
+  FireIcon,
   RocketLaunchIcon,
 } from '@heroicons/react/24/outline';
 
@@ -18,19 +18,19 @@ export const SUBHEALINES = [
 export const PROMPT_IDEAS: PromptIdea[] = [
   {
     icon: <AcademicCapIcon className="size-4 shrink-0 text-[#35AE47]" />,
-    label: 'What did you study?',
+    label: 'What did you study ?',
   },
   {
     icon: <RocketLaunchIcon className="size-4 shrink-0 text-[#e2c441]" />,
-    label: 'What inspires you?',
+    label: 'What inspires you ?',
   },
   {
     icon: <EnvelopeIcon className="size-4 shrink-0 text-[#2d9cdb]" />,
     label: 'How to contact you ?',
   },
   {
-    icon: <BriefcaseIcon className="size-4 shrink-0 text-[#f7a8b8]" />,
-    label: 'What’s your work experience?',
+    icon: <FireIcon className="size-4 shrink-0 text-[#f7a8b8]" />,
+    label: 'What’s your daily routine like ?',
   },
 ];
 
