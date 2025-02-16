@@ -49,7 +49,7 @@ const Card: React.FC<CardProps> = ({ name, discoverable, size = 'md', className,
       role="button"
       tabIndex={0}
       className={cn(
-        'relative flex rounded-3xl bg-gray-100 dark:bg-medium-gray group',
+        'relative flex rounded-3xl bg-gray-100 dark:bg-medium-gray group transition-colors',
         size === 'md' && 'h-24',
         size === 'lg' && 'h-52',
         size === 'xl' && 'h-80',
@@ -65,8 +65,8 @@ const Card: React.FC<CardProps> = ({ name, discoverable, size = 'md', className,
       {children}
       <div
         className={cn(
-          'absolute inset-0 flex items-center justify-center rounded-3xl bg-gray-100 dark:bg-medium-gray dark:hover:shadow-[inset_0px_0px_36px_4px_rgba(255,_255,_255,_0.05)] transition-shadow hover:shadow-[inset_0px_0px_36px_6px_rgba(71,_85,_105,_0.06)]',
-          discovered && 'hidden'
+          'absolute inset-0 flex items-center opacity-100 transition-all visible justify-center rounded-3xl bg-gray-100 dark:bg-medium-gray dark:hover:shadow-[inset_0px_0px_36px_4px_rgba(255,_255,_255,_0.05)] hover:shadow-[inset_0px_0px_36px_6px_rgba(71,_85,_105,_0.06)]',
+          discovered && 'invisible opacity-0'
         )}
       >
         <p className="p-4 text-center text-sm text-gray-500 opacity-0 transition-opacity group-hover:opacity-100 dark:text-gray-400">
